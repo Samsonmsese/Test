@@ -1,122 +1,66 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* The navigation menu */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
   }
   
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  header {
-    background-color: #004080; /* Navy blue */
-    color: #ffffff;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: relative;
-  }
-  
-  /* Logo */
-  .logo {
-    text-decoration: none;
+  /* Navigation links */
+  .navbar a {
+    float: left;
+    font-size: 16px;
     color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Navigation List */
-  .nav-list {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-  }
-  
-  .nav-list li {
-    position: relative;
-  }
-  
-  .nav-list a {
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    color: #ffffff;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
   }
   
-  .nav-list a:hover {
-    color: #ffcc00; /* Yellow on hover */
+  /* The subnavigation menu */
+  .subnav {
+    float: left;
+    overflow: hidden;
   }
   
-  /* Dropdown Menu */
-  .dropdown-menu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    list-style: none;
-    padding: 0;
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
     margin: 0;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
   }
   
-  .dropdown-menu li a {
-    color: #004080; /* Navy */
-    padding: 10px 20px;
-    display: block;
-    white-space: nowrap;
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: red;
   }
   
-  .dropdown-menu li a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Hamburger Menu (Mobile) */
-  .hamburger {
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
+    position: absolute;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    z-index: 1;
   }
   
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background: white;
-    border-radius: 2px;
+  /* Style the subnav links */
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .nav-list {
-      flex-direction: column;
-      background-color: #004080;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 200px;
-      display: none; /* Hidden by default */
-      border-radius: 5px;
-    }
-  
-    .nav-list.show {
-      display: flex; /* Show on toggle */
-    }
-  
-    .nav-list li {
-      text-align: center;
-      margin: 0;
-    }
-  
-    .hamburger {
-      display: flex; /* Show hamburger menu */
-    }
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
   }
   
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
